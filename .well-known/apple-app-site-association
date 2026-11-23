@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["P3Y9NB5P78.com.maxb.bo"],
+        "components": [
+          { "/": "/g/*", "comment": "Сад друга в Бо" }
+        ]
+      }
+    ]
+  }
+}
