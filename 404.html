@@ -2,30 +2,28 @@
 <html lang="uk">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Сад у Бо</title>
+<link rel="icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/site.css?v=2">
 <style>
-  :root { --ink:#1C1C21; --quiet:#6F6E78; --accent:#7467D8; --bg1:#F6F3FF; --bg2:#EEF6FB; --bg3:#F2FAF5; }
-  @media (prefers-color-scheme: dark) { :root { --ink:#F2F1F5; --quiet:#A3A2AD; --accent:#A79CF5; --bg1:#17161D; --bg2:#14181D; --bg3:#141A17; } }
-  * { box-sizing: border-box; }
-  body { margin:0; min-height:100vh; font-family:-apple-system,system-ui,sans-serif; color:var(--ink);
-         background:linear-gradient(115deg,var(--bg1),var(--bg2) 50%,var(--bg3)); display:flex; align-items:center; justify-content:center; padding:24px 16px; }
-  main { max-width:420px; text-align:center; }
-  .stones { font-size:64px; line-height:1; margin-bottom:16px; }
-  h1 { font-size:28px; margin:0 0 12px; }
-  p { color:var(--quiet); font-size:17px; line-height:1.45; margin:0 0 20px; }
-  .legal { margin-top:32px; font-size:14px; } .legal a { color:var(--quiet); }
-  a.btn { display:inline-block; padding:14px 22px; border-radius:999px; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; }
+  .invite { min-height:100vh; display:grid; place-items:center; padding:32px 16px; text-align:center; }
+  .invite main { max-width:460px; display:grid; gap:18px; justify-items:center; }
+  .invite .bo { width:200px; filter:var(--bo-filter); }
+  .invite h1 { font-size:clamp(28px, 7vw, 40px); }
+  .invite .legal { font-size:14px; } .invite .legal a { color:var(--quiet); text-decoration:none; }
 </style>
 </head>
-<body>
+<body class="invite">
 <main>
-  <div class="stones" aria-hidden="true">🪨</div>
+  <a class="brand" href="/"><img src="/img/icon.png" alt="">Бо</a>
+  <img class="bo" src="/img/bo/hug.png" alt="">
   <h1 id="title">Тебе запрошують у Сад</h1>
-  <p>Це посилання на Сад камінців у застосунку «Бо». Відкрий його на iPhone, де встановлено Бо, — і побачиш вежки друга, а можеш і розвивати звичку разом.</p>
-  <p id="hint">Якщо Бо вже стоїть, а відкрилась ця сторінка — натисни кнопку нижче.</p>
-  <a class="btn" id="open" href="#">Відкрити в Бо</a>
-  <p class="legal"><a href="/privacy/">Конфіденційність</a> · <a href="/terms/">Умови</a> · <a href="/support/">Підтримка</a></p>
+  <p class="lead">Це посилання на Сад камінців у застосунку «Бо». Відкрий його на iPhone, де встановлено Бо, — і побачиш вежки друга, а можеш і розвивати звичку разом.</p>
+  <p id="hint" class="quiet">Якщо Бо вже стоїть, а відкрилась ця сторінка — натисни кнопку нижче.</p>
+  <a class="btn accent" id="open" href="#">Відкрити в Бо <span class="arrow" aria-hidden="true">→</span></a>
+  <p class="legal"><a href="/">Що таке Бо</a> · <a href="/privacy/">Конфіденційність</a> · <a href="/support/">Підтримка</a></p>
 </main>
 <script>
   // Тут немає жодних даних: сторінка лише передає посилання застосунку
@@ -40,9 +38,7 @@
       var name = new URLSearchParams(location.search).get("n");
       if (name) document.getElementById("title").textContent = "Сад · " + name;
     } else {
-      document.getElementById("title").textContent = "Бо — звички камінчиками";
-      document.getElementById("hint").textContent = "";
-      document.getElementById("open").style.display = "none";
+      location.replace("/");
       return;
     }
     document.getElementById("open").href = link;

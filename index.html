@@ -2,50 +2,370 @@
 <html lang="uk">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Сад у Бо</title>
-<style>
-  :root { --ink:#1C1C21; --quiet:#6F6E78; --accent:#7467D8; --bg1:#F6F3FF; --bg2:#EEF6FB; --bg3:#F2FAF5; }
-  @media (prefers-color-scheme: dark) { :root { --ink:#F2F1F5; --quiet:#A3A2AD; --accent:#A79CF5; --bg1:#17161D; --bg2:#14181D; --bg3:#141A17; } }
-  * { box-sizing: border-box; }
-  body { margin:0; min-height:100vh; font-family:-apple-system,system-ui,sans-serif; color:var(--ink);
-         background:linear-gradient(115deg,var(--bg1),var(--bg2) 50%,var(--bg3)); display:flex; align-items:center; justify-content:center; padding:24px 16px; }
-  main { max-width:420px; text-align:center; }
-  .stones { font-size:64px; line-height:1; margin-bottom:16px; }
-  h1 { font-size:28px; margin:0 0 12px; }
-  p { color:var(--quiet); font-size:17px; line-height:1.45; margin:0 0 20px; }
-  .legal { margin-top:32px; font-size:14px; } .legal a { color:var(--quiet); }
-  a.btn { display:inline-block; padding:14px 22px; border-radius:999px; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; }
-</style>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Бо — звички, що складаються у вежки</title>
+<meta name="description" content="Бо — трекер звичок і рутини з камінчиком-персонажем. Кожна позначка кладе камінчик у вежку, усі вежки разом — твій Сад. Без стріків, без докорів, без реклами й аналітики.">
+<meta property="og:title" content="Бо — звички, що складаються у вежки">
+<meta property="og:description" content="Перший камінчик за тобою. Трекер звичок без стріків і докорів: вежки камінців, Сад і мальований камінчик Бо.">
+<meta property="og:image" content="https://bo-habits.github.io/img/screens/garden.jpg">
+<meta name="theme-color" content="#F6F3FF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16141F" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/site.css?v=2">
 </head>
 <body>
+
+<header class="nav wrap">
+  <div class="bar glass">
+    <a class="brand" href="/"><img src="/img/icon.png" alt="">Бо</a>
+    <nav class="links" aria-label="Розділи">
+      <a href="#story">Історія</a>
+      <a href="#features">Можливості</a>
+      <a href="#how">Як це працює</a>
+      <a href="#privacy">Приватність</a>
+      <a href="#help">Допомога</a>
+    </nav>
+    <a class="btn small accent" href="#soon" aria-label="Скоро в App Store"><span class="label">Скоро в App Store</span> <span class="arrow" aria-hidden="true">→</span></a>
+  </div>
+</header>
+
 <main>
-  <div class="stones" aria-hidden="true">🪨</div>
-  <h1 id="title">Тебе запрошують у Сад</h1>
-  <p>Це посилання на Сад камінців у застосунку «Бо». Відкрий його на iPhone, де встановлено Бо, — і побачиш вежки друга, а можеш і розвивати звичку разом.</p>
-  <p id="hint">Якщо Бо вже стоїть, а відкрилась ця сторінка — натисни кнопку нижче.</p>
-  <a class="btn" id="open" href="#">Відкрити в Бо</a>
-  <p class="legal"><a href="/privacy/">Конфіденційність</a> · <a href="/terms/">Умови</a> · <a href="/support/">Підтримка</a></p>
+
+<!-- Герой -->
+<section class="hero">
+  <div class="wrap grid">
+    <div>
+      <p class="eyebrow">Трекер звичок і рутини для iPhone</p>
+      <h1 style="margin-top:18px">Звички, що складаються <span class="soft">у&nbsp;вежки</span></h1>
+      <p class="lead">Кожна позначка кладе камінчик у вежку. Усі вежки разом — твій Сад. Камінці ніколи не зникають, а камінчик Бо підкаже, підбадьорить і пожартує, але не докорятиме.</p>
+      <div class="cta">
+        <a class="btn accent" href="#soon">Перший камінчик за тобою <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn" href="#how">Як це працює <span class="arrow" aria-hidden="true">↓</span></a>
+      </div>
+      <p class="note">Безкоштовно · без реклами · без акаунта — лише твій iCloud</p>
+    </div>
+    <div class="stage">
+      <div class="phone"><img src="/img/screens/garden.jpg" alt="Сад кам'яних веж: вежки камінців на траві біля озера, Бо посередині" width="390" height="844"></div>
+      <img class="bo-peek" src="/img/bo/excited.png" alt="" aria-hidden="true">
+    </div>
+  </div>
+</section>
+
+<!-- Історія Бо -->
+<section id="story">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Легенда</p>
+      <h2>Камінчик, який поки що росте</h2>
+      <p class="lead">Бо — це Болдер, гірський валун. Він мальований від руки, говорить від першої особи, любить меми й ніколи не сумує через твої пропуски.</p>
+    </div>
+    <div class="story">
+      <article class="card big reveal">
+        <img src="/img/bo/calm.png" alt="Бо спокійно усміхається">
+        <span class="n">01</span>
+        <p>Привіт! Я Болдер. Для друзів просто Бо, а ми з тобою, здається, вже майже друзі.</p>
+      </article>
+      <article class="card reveal">
+        <img src="/img/bo/smug.png" alt="Бо задоволено мружиться">
+        <span class="n">02</span>
+        <p>Взагалі-то я гірський валун. Просто поки що росту, тож не дивись на розмір.</p>
+      </article>
+      <article class="card reveal">
+        <img src="/img/bo/meditate.png" alt="Бо медитує">
+        <span class="n">03</span>
+        <p>Мені понад 45 мільйонів років. Мене тиснули льодовики, шліфували річки, пекло сонце й морозили зими — тож я майже пізнав дзен.</p>
+      </article>
+      <article class="card reveal">
+        <img src="/img/bo/determined.png" alt="Бо налаштований">
+        <span class="n">04</span>
+        <p>Я знаю, як працює сталість, коли тяжко, як не розсипатися після падіння і як ставати міцнішим із кожним роком.</p>
+      </article>
+      <article class="card reveal" style="background:var(--mint)">
+        <img src="/img/bo/excited.png" alt="Бо в захваті">
+        <span class="n">05</span>
+        <p>Твої звички стануть міцними, як мій дід. Його звати Еверест — може, ти про нього вже знаєш.</p>
+      </article>
+      <article class="card big reveal" style="background:var(--peach); grid-column:1 / -1">
+        <img src="/img/bo/aim.png" alt="Бо цілиться">
+        <span class="n">06</span>
+        <p>То що, почнемо? Перший камінчик за тобою.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Принципи -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="glass reveal" style="border-radius:40px; padding:clamp(28px,5vw,56px); display:grid; gap:18px">
+      <p class="eyebrow">Натяк, а не тиск</p>
+      <h2 style="max-width:880px">Без стріків. Без докорів. Без червоного.</h2>
+      <p class="lead" style="max-width:760px">Звичку формують повтори, а не «днів поспіль». Тому в Бо немає лічильника, який обнуляється від одного пропуску, — є вежка, що тільки росте, і м'який натяк «не пропускай двічі».</p>
+      <div class="pills">
+        <span class="pill" style="background:var(--lavender)">Мінімум на 2 хвилини теж рахується</span>
+        <span class="pill" style="background:var(--mint)">Один пропуск — норма</span>
+        <span class="pill" style="background:var(--sky)">Камінці ніколи не зникають</span>
+        <span class="pill" style="background:var(--peach)">Будь-яка позначка знімає решту нагадувань дня</span>
+        <span class="pill" style="background:var(--sand)">Усе, крім позначки, пропускається одним дотиком</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Головні можливості -->
+<section id="features" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Можливості</p>
+      <h2>Що вміє Бо</h2>
+    </div>
+
+    <div class="feature reveal">
+      <div class="text">
+        <p class="eyebrow">Мій день</p>
+        <h3>Увесь день — в одному погляді</h3>
+        <p class="quiet">Зверху — кружечки звичок дня, як сторіс: торкнись і позначай одну за одною. Посередині — Бо на траві біля озера, який вітається на ім'я й відповідає на твій настрій.</p>
+        <ul>
+          <li>Мінімальна версія звички — повноцінна позначка</li>
+          <li>Розкажи голосом «прочитав 20 сторінок і пробіг 5 км» — Бо сам розкладе по звичках</li>
+          <li>Настрій дня: «Втомлений» чи «Хворію» — і Бо попросить лише мінімум</li>
+        </ul>
+      </div>
+      <div class="media" style="background:var(--lavender)">
+        <div class="phone sm"><img src="/img/screens/today.jpg" alt="Екран «Мій день»" loading="lazy" width="390" height="844"></div>
+      </div>
+    </div>
+
+    <div class="feature flip reveal">
+      <div class="text">
+        <p class="eyebrow">Сад камінців</p>
+        <h3>Прогрес, який видно здалеку</h3>
+        <p class="quiet">Свайп праворуч — і камера відлітає від Бо до цілого Саду: кожна звичка стоїть своєю вежкою, вежки однієї ідентичності — поруч. Чим більше повторів, тим вища вежка.</p>
+        <ul>
+          <li>Довга пауза — вежку обплітає трава, перша позначка її очищає</li>
+          <li>Облаштуй Сад: лавка, ліхтарик, човник, ліс чи океан</li>
+          <li>Поділися листівкою Саду або живим Садом із друзями</li>
+        </ul>
+      </div>
+      <div class="media" style="background:var(--mint)">
+        <div class="phone sm"><img src="/img/screens/tower.jpg" alt="Аркуш вежки в Саду: висота, коли почав, формула звички" loading="lazy" width="390" height="844"></div>
+      </div>
+    </div>
+
+    <div class="feature reveal">
+      <div class="text">
+        <p class="eyebrow">Система звички</p>
+        <h3>Не просто «читати», а коли, де й після чого</h3>
+        <p class="quiet">Кожна звичка — маленька система: ким ти стаєш, коли і де, після якої звички, що підготувати заздалегідь, яку приємність собі дати після й що робити в найважчий день.</p>
+        <ul>
+          <li>200 готових шаблонів у восьми темах</li>
+          <li>Межа звички від 28 днів із позначкою — потім вона «здобута»</li>
+          <li>Пропустив двічі — Бо спитає, що завадило, і запропонує одну правку</li>
+        </ul>
+      </div>
+      <div class="media" style="background:var(--sky)">
+        <div class="phone sm"><img src="/img/screens/habit.jpg" alt="Екран звички з вежкою на 24 камінці" loading="lazy" width="390" height="844"></div>
+      </div>
+    </div>
+
+    <div class="feature flip reveal">
+      <div class="text">
+        <p class="eyebrow">Гардероб Бо</p>
+        <h3>Наліпки за досягнення, речі — для Бо</h3>
+        <p class="quiet">Досягнення відкривають наліпки-пози, а наліпки відкривають речі в гардеробі: шість форм тіла, корона, навушники, шарф, гітара й ще пів сотні речей. Бо носить їх скрізь — на «Мій день», у Саду й у картці для друзів.</p>
+        <ul>
+          <li>114 мальованих поз — і в іконках звичок, і в сповіщеннях</li>
+          <li>Відкрита річ лишається назавжди</li>
+        </ul>
+      </div>
+      <div class="media" style="background:var(--peach)">
+        <div class="phone sm"><img src="/img/screens/wardrobe.jpg" alt="Гардероб Бо: корона, шапка, окуляри, навушники" loading="lazy" width="390" height="844"></div>
+      </div>
+    </div>
+
+    <div class="feature reveal">
+      <div class="text">
+        <p class="eyebrow">Прогрес</p>
+        <h3>Тиждень і місяць — без оцінок</h3>
+        <p class="quiet">Діаграма тижня, точки кожної звички, календар місяця й дорожня карта: перший тиждень — три звички, далі п'ять і десять, коли попередні приживуться.</p>
+        <ul>
+          <li>Пропуск — сіра точка, а не червоний хрестик</li>
+          <li>«Я через 3 місяці» — прогноз, який ніколи не малює менше, ніж є зараз</li>
+        </ul>
+      </div>
+      <div class="media" style="background:var(--sand)">
+        <div class="phone sm"><img src="/img/screens/progress.jpg" alt="Екран «Прогрес»: закрито 18 з 24, діаграма тижня" loading="lazy" width="390" height="844"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ще можливості -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">І ще</p>
+      <h2>Дрібниці, які роблять звичку легкою</h2>
+    </div>
+    <div class="bento">
+      <div class="tile wide pad-bo reveal" style="background:#16141F; color:#F2F1F5">
+        <h3>Ранок із Бо</h3>
+        <p style="color:#A3A2AD">Раз на день Бо спить у ліжку в нічному ковпаку. Потягни ланцюжок торшера — вмикається світло. Підніми Бо, як камінь, — під ним твій день.</p>
+        <img class="bo" src="/img/bo/meditate.png" alt="" style="filter:invert(.94)">
+      </div>
+      <div class="tile reveal" style="background:var(--surface)">
+        <h3>Нагадування з мемами</h3>
+        <p>М'які, з позою Бо. Перша позначка знімає решту дня. Після тижня тиші — чесна пауза.</p>
+      </div>
+      <div class="tile reveal" style="background:var(--rose)">
+        <h3>Дати близьких</h3>
+        <p>Дні народження з Контактів, річниці й позначка «привітав».</p>
+      </div>
+      <div class="tile reveal" style="background:var(--mint)">
+        <h3>Разом із другом</h3>
+        <p>Запроси друга до звички — і бачте вежки одне одного.</p>
+      </div>
+      <div class="tile reveal" style="background:var(--sky)">
+        <h3>Віджети й Siri</h3>
+        <p>«Далі», «Сьогодні», екран блокування, Центр керування — позначка без відкриття застосунку.</p>
+      </div>
+      <div class="tile pad-bo reveal" style="background:var(--lavender)">
+        <h3>Фокус із Бо</h3>
+        <p>Таймер на 15, 25 чи 45 хвилин, тихий ритм — і Бо в навушниках киває в такт.</p>
+        <img class="bo" src="/img/bo/vibe.png" alt="">
+      </div>
+      <div class="tile reveal" style="background:var(--sand)">
+        <h3>У відпустці</h3>
+        <p>Режим дня на час поїздки: нагадування мовчать, вежки чекають.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Як це працює -->
+<section id="how" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Як це працює</p>
+      <h2>Чотири кроки від наміру до Саду</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="num">1</span>
+        <h3>Обери, ким стаєш</h3>
+        <p>«Я людина, яка читає». Звичка — це повтори, які формують ідентичність.</p>
+      </div>
+      <div class="step reveal">
+        <span class="num">2</span>
+        <h3>Склади систему</h3>
+        <p>Коли, де, після чого — і мінімум на дві хвилини для важкого дня.</p>
+      </div>
+      <div class="step reveal">
+        <span class="num">3</span>
+        <h3>Познач — і камінчик ліг</h3>
+        <p>Повна позначка чи мінімум — однаково камінчик у вежку. Пропуск нічого не забирає.</p>
+      </div>
+      <div class="step reveal">
+        <span class="num">4</span>
+        <h3>Дивись, як росте Сад</h3>
+        <p>Вежки складаються в Сад, а звичка через 28+ днів стає «здобутою».</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Приватність -->
+<section id="privacy" style="padding-top:0">
+  <div class="wrap">
+    <div class="privacy glass reveal">
+      <div style="display:grid; gap:18px">
+        <p class="eyebrow">Приватність</p>
+        <h2>Твої звички — тільки твої</h2>
+        <p class="lead">У Бо немає наших серверів, реклами й аналітики. Акаунт — це твій iCloud: дані лежать на пристрої й у твоїй приватній базі Apple, якої не бачимо навіть ми.</p>
+        <p><a href="/privacy/">Політика конфіденційності →</a></p>
+      </div>
+      <ul>
+        <li><span class="dot">1</span><div><b>Без реєстрації</b><span>Ні пошти, ні пароля. Відкрив — і почав.</span></div></li>
+        <li><span class="dot">2</span><div><b>Ділишся лише тим, що обрав</b><span>Сад для друзів — тільки обрані вежки, без журналу й нотаток.</span></div></li>
+        <li><span class="dot">3</span><div><b>Без трекерів</b><span>Жодних сторонніх SDK, реклами чи продажу даних.</span></div></li>
+        <li><span class="dot">4</span><div><b>Видалення одним дотиком</b><span>«Я» → налаштування → «Видалити всі мої дані» — з пристрою, iCloud і живого Саду.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Ранок і віджети: дві картинки -->
+<section id="soon" style="padding-top:0">
+  <div class="wrap">
+    <div class="feature reveal" style="border:0">
+      <div class="text">
+        <p class="eyebrow">Скоро</p>
+        <h2>Бо вже тестується на iPhone</h2>
+        <p class="lead">Застосунок зараз у бета-тестуванні й незабаром з'явиться в App Store для iPhone та iPad з iOS 18 і новіших. Безкоштовно, українською.</p>
+        <div class="cta" style="display:flex; gap:12px; flex-wrap:wrap; margin-top:8px">
+          <a class="btn accent" href="/support/">Питання чи ідея? <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="media" style="background:transparent; display:flex; gap:16px; justify-content:center; padding:0">
+        <div class="phone sm"><img src="/img/screens/morning.jpg" alt="Ранок із Бо: темна кімната, торшер і Бо, що спить" loading="lazy" width="390" height="844"></div>
+        <div class="phone sm" style="margin-top:56px"><img src="/img/screens/widgets.jpg" alt="Віджети Бо на головному екрані" loading="lazy" width="390" height="844"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Допомога -->
+<section id="help" style="padding-top:0">
+  <div class="wrap help">
+    <div style="display:grid; gap:18px">
+      <p class="eyebrow">Допомога</p>
+      <h2>Куди звертатись</h2>
+      <p class="lead">Помилка, ідея чи питання — напиши, ми відповідаємо в міру сил.</p>
+      <div class="contact glass">
+        <h3>Написати нам</h3>
+        <p class="quiet">Відкрий звернення на GitHub (потрібен безкоштовний акаунт). Повідомлення там публічні, тож не пиши нічого особистого.</p>
+        <p><a class="btn small accent" href="https://github.com/bo-habits/bo-habits.github.io/issues/new">Нове звернення <span class="arrow" aria-hidden="true">→</span></a></p>
+        <p class="quiet" style="font-size:15px">Більше відповідей — на сторінці <a href="/support/">підтримки</a>.</p>
+      </div>
+    </div>
+    <div class="faq">
+      <details><summary>Чи потрібен акаунт?</summary><p>Ні. Твій «акаунт» у Бо — це iCloud. Увійди з тим самим Apple ID на iPhone чи iPad — і звички з'являться всюди.</p></details>
+      <details><summary>Скільки коштує Бо?</summary><p>Бо безкоштовний. Без реклами й без підписок.</p></details>
+      <details><summary>Що буде, якщо я пропущу день?</summary><p>Нічого страшного: камінці лишаються у вежці. Один пропуск — норма, на другий поспіль Бо м'яко нагадає «не двічі». Довга пауза — вежку обплітає трава, перша ж позначка її очищає.</p></details>
+      <details><summary>Не приходять нагадування</summary><p>Параметри → Сповіщення → Бо — увімкни сповіщення. Перевір також режими зосередження й тихі години в Бо: «Я» → налаштування → «Нагадування».</p></details>
+      <details><summary>Звички не з'являються на іншому пристрої</summary><p>На обох пристроях має бути той самий Apple ID і ввімкнений iCloud для Бо. Стан видно в «Я» → налаштування → «iCloud». Синхронізація триває кілька хвилин.</p></details>
+      <details><summary>Як видалити всі дані?</summary><p>«Я» → налаштування → «Видалити всі мої дані». Зникне все: на пристрої, в iCloud, а також твій живий Сад і запрошення.</p></details>
+    </div>
+  </div>
+</section>
+
 </main>
+
+<footer class="wrap">
+  <div class="row">
+    <a class="brand" href="/" style="font-size:18px"><img src="/img/icon.png" alt="" style="width:28px;height:28px;border-radius:8px">Бо</a>
+    <nav aria-label="Документи">
+      <a href="/privacy/">Конфіденційність</a>
+      <a href="/terms/">Умови</a>
+      <a href="/support/">Підтримка</a>
+    </nav>
+    <span>© 2026 Max Bo · Зроблено з камінчиків</span>
+  </div>
+</footer>
+
 <script>
-  // Тут немає жодних даних: сторінка лише передає посилання застосунку
+  // плавна поява секцій; без підтримки чи зі «зменшенням руху» усе видно одразу
   (function () {
-    var path = location.pathname.replace(/^\/+/, "");
-    var parts = path.split("/");
-    var link = "zvychky://";
-    if (parts[0] === "g" && parts[1] === "d" && location.hash.length > 1) {
-      link += "garden?d=" + location.hash.slice(1);
-    } else if (parts[0] === "g" && parts[1]) {
-      link += "g/" + parts[1] + location.search;
-      var name = new URLSearchParams(location.search).get("n");
-      if (name) document.getElementById("title").textContent = "Сад · " + name;
-    } else {
-      document.getElementById("title").textContent = "Бо — звички камінчиками";
-      document.getElementById("hint").textContent = "";
-      document.getElementById("open").style.display = "none";
+    var items = document.querySelectorAll(".reveal");
+    if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      items.forEach(function (el) { el.classList.add("in"); });
       return;
     }
-    document.getElementById("open").href = link;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    items.forEach(function (el) { io.observe(el); });
   })();
 </script>
 </body>
